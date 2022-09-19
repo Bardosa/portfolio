@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;500;600;800&display=swap');
+
+:root {
+
+    --header-size: 3rem;
+
+    /*====== Color ======*/
+    --black-color: rgb(6, 7, 26);
+    --blackgray-color: rgb(6, 39, 41); 
+    --white-color: rgb(200, 255, 255);
+    --primary-color: rgb(233, 180, 81);
+    --secundary-color: rgb(34, 64, 230);
+
+    
+    /*====== Font ======*/
+    --font-family: "Outfit", "Bahnschrift", sans-serif;
+    --title-size: 3rem;
+    --h1-size: 2.5rem;
+    --h2-size: 2rem;
+    --h3-size: 1.5rem;
+    --p-size: 1.05rem;
+    --small-size: .85rem;
+
+    --bold: 800;
+    --semibold: 600;
+    --light: 400;
+
+}
+
+@media screen and (max-width: 786px) {
+    :root {
+        --title-size: 2rem;
+        --h1-size: 1.75rem;
+        --h2-size: 1.5rem;
+        --h3-size: 1.25rem;
+        --p-size: .95rem;
+        --small-size: .75rem;
+    }
+}
+
+/*====== Base ======*/
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--black-color);
+
+    color: var(--white-color);
+    font-size: var(--font-normal);
+    font-weight: 400;
+    letter-spacing: .05rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+h1, h2, h3 {
+    font-weight: var(--semibold);
+}
+
+a {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+a:hover {
+    transition: .5s;
+    color: var(--primary-color);
+}
+
+a:active {
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    background-color: var(--secundary-color);
+
+    font-family: var(--font-family);
+    color: var(--white-color);
+
+    padding: .5rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+}
+
+/*====== Classes reusaveis ======*/
+.container {
+    max-width: 1024px;
+    width: 100%;
+    padding: 0 1.5rem;
+    margin: auto;
+}
+
+.title_section {
+    font-size: var(--font-medium);
+    color: var(--primary-color);
+}
+
+.subtitle_section {
+    font-size: var(--font-small);
+}
+
+.fi {
+    display: inline-flex;
+}
+
+/*====== Header ======*/
+.header {
+    max-width: 100vw;
+    width: 100%;
+    height: var(--header-size);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    background-color: var(--black-color);
+}
+
+.nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo h2 {
+    font-size: var(--p-size);
+}
+
+.ponto {
+    color: var(--primary-color);
+    font-size: var(--h2-size);
+    font-weight: var(--bold);
+}
+
+/*====== Menu ======*/
+
+.nav_icons {
+    display: none;
+}
+
+.toggle {
+    display: none;
+}
+
+.menu_icons:hover {
+    transition: .5s;
+    color: var(--primary-color);
+}
+
+.menu_icons:active {
+    color: var(--primary-color);
+}
+
+.nav_list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+@media screen and (max-width: 768px){
+    .nav_icons {
+        display: inline-flex;
+    }
+    
+    .toggle {
+        display: inline-flex;
+        cursor: pointer;
+        transition: .5s;
+    }
+
+    .abrir {
+        display: inline-block;
+    }
+
+    .fechar {
+        display: none;
+    }
+
+    .nav_link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    .menu {
+        max-width: 100vw;
+        width: 100%;
+        padding: 1.5rem 1.5rem;
+
+        background-color: var(--black-color);
+        box-shadow: 0 5px 5px -5px rgba(34, 64, 230, 0.4);
+
+        transition: .5s;
+
+        position: fixed;
+        top: var(--header-size);
+        left: -100%;
+    }
+
+    .nav_list {
+        height: 90%;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 628px) {
+    .nav_list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .nav_list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.show_menu {
+    left: 0;
+}
+
+/*====== Inicio ======*/
+.inicio {
+    margin-top: var(--header-size);
+    height: calc(100vh - var(--header-size));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inicio h1 {
+    text-align: center;
+    font-size: var(--title-size);
+    font-weight: var(--bold);
+}
+
+.links_redes {
+    margin: 2.5rem 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.fi-brands-linkedin,
+.fi-brands-github {
+    font-size: var(--h3-size);
+}
