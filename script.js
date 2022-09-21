@@ -12,11 +12,11 @@ function showMenu() {
     if(abrir.style.display != 'none') {
         menubar.classList.add('show_menu')
         abrir.style.display = 'none'
-        fechar.style.display = 'block'
+        fechar.style.display = 'inline-flex'
     } else if(fechar.style.display != 'none') {
         menubar.classList.remove('show_menu')
         fechar.style.display = 'none'
-        abrir.style.display = 'block'
+        abrir.style.display = 'inline-flex'
     }
 }
 

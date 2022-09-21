@@ -8,8 +8,10 @@
     --black-color: rgb(6, 7, 26);
     --blackgray-color: rgb(6, 39, 41); 
     --white-color: rgb(200, 255, 255);
+    --light-color: rgb(192, 187, 122);
     --primary-color: rgb(233, 180, 81);
     --secundary-color: rgb(34, 64, 230);
+    --terciary-color: rgb(24, 34, 220);
 
     
     /*====== Font ======*/
@@ -19,7 +21,7 @@
     --h2-size: 2rem;
     --h3-size: 1.5rem;
     --p-size: 1.05rem;
-    --small-size: .85rem;
+    --small-size: .75rem;
 
     --bold: 800;
     --semibold: 600;
@@ -34,7 +36,7 @@
         --h2-size: 1.5rem;
         --h3-size: 1.25rem;
         --p-size: .95rem;
-        --small-size: .75rem;
+        --small-size: .65rem;
     }
 }
 
@@ -48,15 +50,16 @@
 
 html {
     scroll-behavior: smooth;
+    letter-spacing: .05rem;
 }
 
 body {
     background-color: var(--black-color);
 
     color: var(--white-color);
-    font-size: var(--font-normal);
+    font-size: var(--p-size);
+    font-family: var(--font-family);
     font-weight: 400;
-    letter-spacing: .05rem;
 }
 
 img {
@@ -67,6 +70,18 @@ img {
 
 h1, h2, h3 {
     font-weight: var(--semibold);
+}
+
+h1 {
+    font-size: var(--h1-size);
+}
+
+h2 {
+    font-size: var(--h2-size);
+}
+
+h3 {
+    font-size: var(--h3-size);
 }
 
 a {
@@ -96,6 +111,17 @@ button {
     padding: .5rem 1.5rem;
     border: none;
     border-radius: 50px;
+    cursor: pointer;
+}
+
+button:hover {
+    transition: .5s;
+    background-color: var(--terciary-color);
+    letter-spacing: .05rem;
+}
+
+button:active {
+    background-color: var(--terciary-color);
 }
 
 /*====== Classes reusaveis ======*/
@@ -107,16 +133,26 @@ button {
 }
 
 .title_section {
-    font-size: var(--font-medium);
+    font-size: var(--h1-size);
     color: var(--primary-color);
 }
 
 .subtitle_section {
-    font-size: var(--font-small);
+    font-size: var(--small-size);
+    font-weight: var(--light);
 }
 
 .fi {
     display: inline-flex;
+}
+
+.box_title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.link {
+    color: var(--light-color);
 }
 
 /*====== Header ======*/
@@ -255,6 +291,21 @@ button {
     text-align: center;
     font-size: var(--title-size);
     font-weight: var(--bold);
+    margin-bottom: 5px;
+}
+
+.inicio h1::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 50px;
+    margin: auto;
+    background-color: var(--secundary-color);
+
+    position: relative;
+    top: -2px;
+
+    transition: .5s;
 }
 
 .links_redes {
@@ -267,3 +318,57 @@ button {
 .fi-brands-github {
     font-size: var(--h3-size);
 }
+
+/*====== Sobre ======*/
+.sobre {
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem 2rem;
+}
+
+.exp {
+    width: 100%;
+    padding: 1.5rem;
+    margin: auto;
+    border-radius: 20px;
+
+    display: flex;
+    gap: 3rem 1.5rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.exp_items {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.exp_icons {
+    padding: .5rem;
+    border-radius: 50%;
+
+    display: inline-flex;
+
+    background-color: var(--terciary-color);
+    color: var(--white-color);
+}
+
+.small {
+    color: var(--primary-color);
+    font-weight: var(--semibold);
+}
+
+/*====== Animações ======*/
