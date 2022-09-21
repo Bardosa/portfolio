@@ -6,7 +6,7 @@
 
     /*====== Color ======*/
     --black-color: rgb(6, 7, 26);
-    --blackgray-color: rgb(6, 39, 41); 
+    --gray-color: rgb(6, 39, 41); 
     --white-color: rgb(200, 255, 255);
     --light-color: rgb(192, 187, 122);
     --primary-color: rgb(233, 180, 81);
@@ -66,6 +66,7 @@ img {
     width: 100%;
     height: auto;
     vertical-align: middle;
+    margin: auto;
 }
 
 h1, h2, h3 {
@@ -321,7 +322,7 @@ button:active {
 
 /*====== Sobre ======*/
 .sobre {
-    height: 100vh;
+    min-height: 100vh;
 
     display: flex;
     align-items: center;
@@ -331,44 +332,73 @@ button:active {
 
 .content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     gap: 4rem 2rem;
 }
 
-.exp {
-    width: 100%;
+.box_sobre_text {
+    background-color: var(--gray-color);
+
     padding: 1.5rem;
-    margin: auto;
-    border-radius: 20px;
+    border-radius: 10px;
 
     display: flex;
-    gap: 3rem 1.5rem;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
 
+.exp {
+    grid-row-start: 2;
     grid-column-start: 1;
     grid-column-end: 3;
+
+    margin: auto;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-around;
+    gap: 1.5rem;
+}
+
+.exp_icons {
+    margin-bottom: .5rem;
 }
 
 .exp_items {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-}
-
-.exp_icons {
-    padding: .5rem;
-    border-radius: 50%;
-
-    display: inline-flex;
-
-    background-color: var(--terciary-color);
-    color: var(--white-color);
 }
 
 .small {
     color: var(--primary-color);
-    font-weight: var(--semibold);
+    font-size: var(--small-size);
+}
+
+@media screen and (max-width: 684px) {
+    .sobre img {
+        max-width: 25%;
+        grid-row-start: 1;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .box_sobre_text {
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .exp {
+        grid-row-start: 3;
+    }
+}
+
+@media screen and (max-width: 548px) {
+    .exp {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 /*====== Animações ======*/
